@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAppointments } from "../controllers/appointment.controller";
+import { createAppointment, deleteAppointment, getAppointmentById, getAppointments, updateAppointment } from "../controllers/appointment.controller";
 
 class AppointmentRoutes {
   router = Router();
@@ -10,9 +10,10 @@ class AppointmentRoutes {
 
   intializeRoutes() {
     this.router.get("/", getAppointments as any);
-   /*  this.router.post("/", fun as any);
-    this.router.get("/:id", fun as any);
-    this.router.put("/", fun as any); */
+    this.router.put("/:id", updateAppointment as any);
+    this.router.get("/:id", getAppointmentById as any);
+    this.router.post("/", createAppointment as any);
+    this.router.delete("/", deleteAppointment as any);    
   }
 }
 
