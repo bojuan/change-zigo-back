@@ -13,7 +13,7 @@ class AppointmentRoutes {
     this.router.put("/:id", updateAppointment as any);
     this.router.get("/:id", getAppointmentById as any);
     this.router.post("/", createAppointment as any);
-    this.router.delete("/", deleteAppointment as any);    
+    this.router.delete("/:id", deleteAppointment as any);    
   }
 }
 
